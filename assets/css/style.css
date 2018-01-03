@@ -34,8 +34,7 @@ p:last-child {
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: Georgia, Times, "Times New Roman", serif;
   font-weight: 700;
   color: #26c6da;
@@ -48,10 +47,10 @@ h1 {
   border-bottom: 3px solid #ddd;
 }
 
-h2,
-h3 {
+h2 {
   font-size: 22px;
 }
+
 
 /* header */
 
