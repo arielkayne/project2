@@ -25,7 +25,9 @@ PRIMARY KEY (user_id)
 
 CREATE TABLE health_claims(
 healthclaim_id INT NOT NULL AUTO_INCREMENT,
--- date claim was added to d
+-- must be linked to user_id from users table
+user_id INT NOT NULL,
+-- date claim was added to database
 healthclaim_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 -- updated every time a change is made to claim
 ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
