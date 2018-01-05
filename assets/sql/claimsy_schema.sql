@@ -20,12 +20,16 @@ email VARCHAR(30) NOT NULL,
 birthday DATE,
 -- US zip code
 postal_code_us VARCHAR(5),
+-- empty scratchpad field for users to store notes on insurance #s, adresses, claim form URLs
+scratchpad VARCHAR (511),
 PRIMARY KEY (user_id)
 );
 
 CREATE TABLE health_claims(
 healthclaim_id INT NOT NULL AUTO_INCREMENT,
--- date claim was added to d
+-- must be linked to user_id from users table
+user_id INT NOT NULL,
+-- date claim was added to database
 healthclaim_added TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 -- updated every time a change is made to claim
 ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -64,6 +68,10 @@ have_submittedclaim_tertiary BOOLEAN,
 have_eob_primary BOOLEAN,
 have_eob_secondary BOOLEAN,
 have_eob_tertiary BOOLEAN,
+-- placeholder columns for EOB claim # storage
+eob_primary_claimnumber VARCHAR(20),
+eob_secondary_claimnumber VARCHAR(20),
+eob_tertiary_claimnumber VARCHAR(20),
 -- has the user received a satisfactory claim response? 
 have_completedclaim BOOLEAN,
 PRIMARY KEY (healthclaim_id)
@@ -104,4 +112,9 @@ have_submittedclaim BOOLEAN,
 have_acknowledgedreceipt BOOLEAN,
 have_receivedrebate BOOLEAN,
 PRIMARY KEY (rebateclaim_id)
+);
+
+-- here's a table for users to input their insurance acct contact info for when they eventually make claims
+-- text field for now, eventually want to make this more functional
+CREATE TABLE users_accounts(
 );
