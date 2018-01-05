@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
     <!-- Sets mobile device -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 2</title>
+  <title>Claimsy</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -17,10 +17,13 @@
 
   <header id="masthead">
     <div class="container">
-      <a href="index.html" id="logo">Project 2</a>
+      <a href="index.html" id="logo">Claimsy</a>
       <nav>
         <a href="index.html">Home</a>
-        <a href="input.html">Add a transaction</a>
+        <a href="add.html">Add a transaction</a>
+        <!-- javascript needs to be written so that this is either showing or not depending on if logged in -->
+        <a href="index.html" class = "signout">Sign Out</a>
+        <a href="signin.html" class = "signin">Sign In</a>
       </nav>
     </div>
   </header>
@@ -28,9 +31,9 @@
   <div id="main-container" class="container">
     <section class="main-section">
       <h1>Sign Up</h1>
-      <h3><a href="signup">Already have an account? Click here to sign in</a></h3>
+      <h3><a href="signin.html">Already have an account? Click here to sign in</a></h3>
 
-      <form id="contact-form">
+      <form id="info-form">
         <ul>
           <li>
             <label for="name">Name</label>
@@ -54,10 +57,10 @@
       <div id="connect">
         <h2>Connect with Us</h2>
 
-        <a href="https://github.com/hlivingston07" target="_blank">Holly Livingston<img src="assets/images/github-128.png" class="social" alt="GitHub" /></a>
-        <a href="https://github.com/joycedelatorre" target="_blank">Joyce De La Torre<img src="assets/images/github-128.png" class="social" alt="GitHub" /></a>
-        <a href="https://github.com/luckykobold" target="_blank">Jeff Hartman<img src="assets/images/github-128.png" class="social" alt="GitHub" /></a>
-        <a href="https://github.com/arielkayne" target="_blank">Ariel Kayne<img src="assets/images/github-128.png" class="social" alt="GitHub" /></a>
+        <a href="https://github.com/hlivingston07" target="_blank"><img src= "assets/images/holly.jpg" class="social" alt="Holly Livingston" /></a>
+        <a href="https://github.com/joycedelatorre" target="_blank"><img src="assets/images/joyce.jpg" class="social" alt="GitHub" /></a><br>
+        <a href="https://github.com/luckykobold" target="_blank"><img src="assets/images/jeff.jpg" class="social" alt="GitHub" /></a>
+        <a href="https://github.com/arielkayne" target="_blank"><img src="assets/images/ari.jpg" class="social" alt="GitHub" /></a>
       </div>
     </section>
   </div>
