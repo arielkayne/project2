@@ -32,5 +32,18 @@ module.exports = function(app){
     });
   });
 
+//----------- edit/ update
+   app.put("/api/transactions", function(req, res) {
+    db.Transaction.update(
+      req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      }).then(function(dbTransaction) {
+        res.json(dbTransaction);
+      });
+  });
+
 
 };
