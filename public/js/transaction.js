@@ -1,5 +1,12 @@
 var userId = GetQueryStringParams("userId");
 
+  function getFirstNameLastName(){
+    $.get("/api/users/"+userId, function(data){
+      console.log(data);
+      $("#transacUname").html(data.firstName + " " + data.lastName);
+    });
+  }
+
   function getTransactions(){
     $.get("/api/transactions/"+userId, function(data){
       //console.log(data[0]);
@@ -11,6 +18,7 @@ var userId = GetQueryStringParams("userId");
       renderTransacList(rowsToAdd);
     });
   }
+
  function renderTransacList(rows){ //this will render all the transactions of a user
     //console.log(rows[0]);
     $( ".lTransac" ).remove();
@@ -59,15 +67,61 @@ var userId = GetQueryStringParams("userId");
     });
   }
 
-  function addEditEvent(){
+ function addEditEvent(){
     $(".table-striped").on("click", ".edit", function(){
+      event.preventDefault();
+      $(this).closest('tr').find('.edit_Input').prop('disabled', false);
+      $(this).closest('tr').find('.edit').html('Save');
+      $(this).closest('tr').find('.edit').addClass('save');
+      $(this).closest('tr').find('.edit').removeClass('edit');
+      $(this).closest('tr').find('.delete').html('Cancel');
+      $(this).closest('tr').find('.delete').addClass('cancel');
+      $(this).closest('tr').find('.delete').removeClass('delete');
+    });
 
+
+    // saveUpdate();
+    $(".table-striped").on("click", ".save", function(){
+      var saveInstanceId = $(this).parent("td").parent("tr").attr('id');
+      console.log(saveInstanceId);
+      console.log($(".edit_Input").val());
+      $.ajax({
+        method:"PUT",
+        url:"/api/transactions",
+        data:
+        {
+        id:saveInstanceId,
+        status:$(".edit_Input").val().trim()
+        }
+      }).done();
+      $(this).closest('tr').find('.edit_Input').prop('disabled', true);
+      $(this).closest('tr').find('.cancel').html('Delete');
+      $(this).closest('tr').find('.cancel').addClass('delete');
+      $(this).closest('tr').find('.cancel').removeClass('cancel');
+
+      $(this).closest('tr').find('.save').html('Edit');
+      $(this).closest('tr').find('.save').addClass('edit');
+      $(this).closest('tr').find('.save').removeClass('save');
+    });
+    // cancelUpdate
+     $(".table-striped").on("click", ".cancel", function(){
+      $(this).closest('tr').find('.edit_Input').prop('disabled', true);
+      $(this).closest('tr').find('.cancel').html('Delete');
+      $(this).closest('tr').find('.cancel').addClass('delete');
+      $(this).closest('tr').find('.cancel').removeClass('cancel');
+
+      $(this).closest('tr').find('.save').html('Edit');
+      $(this).closest('tr').find('.save').addClass('edit');
+      $(this).closest('tr').find('.save').removeClass('save');
+      getTransactions();
     });
   }
 
 
+
 $(document).ready(function(){
 
+  getFirstNameLastName();
 //--------------------- READ TRANSACTION DATA
   $("#listTransac").on("click", function(event){ //to get all the transaction data from DB
     // event.preventDefault();
@@ -86,6 +140,11 @@ $(document).ready(function(){
       }
     );
   });
+
+   $("#LogOut").on("click", function(event){
+    event.preventDefault();
+    window.location = "/";
+  })
 
 });
 
