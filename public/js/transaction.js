@@ -39,12 +39,46 @@ function getTransactions(){
     }
   }
 
+  function insertTransaction(transactionData){
+    $.post("/api/new", transactionData)
+      .then(getTransactions);
+  }
+
+  
+  //--------------------------- DELETE TRANSACTION DATA
+  function addDeleteEvent() {
+    $(".table-striped").on("click", ".delete", function() {
+      // console.log("test");
+      var rowId = $(this).parent("td").parent("tr").attr('id');
+      console.log(rowId);
+      $(this).closest("tr").remove();
+      $.ajax({
+        method:"DELETE",
+        url:"/api/transactions/" + rowId
+      }) .done(getTransactions());
+    });
+  }
+
+
 $(document).ready(function(){
 
 //--------------------- READ TRANSACTION DATA
   $("#listTransac").on("click", function(event){ //to get all the transaction data from DB
     // event.preventDefault();
     getTransactions();
+  });
+//--------------------------- CREATE TRANSACTION DATA
+  $("#add").on("click", function(event){
+  event.preventDefault();
+    insertTransaction(
+      {
+        provider:$("#providerInput").val().trim(),
+        description:$("#descriptionInput").val().trim(),
+        amount:$("#amountInput").val().trim(),
+        status:$("#statusInput").val().trim(),
+        UserId:userId
+      }
+    );
   });
 
 });

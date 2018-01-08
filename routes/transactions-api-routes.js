@@ -14,4 +14,23 @@ module.exports = function(app){
     });
   });
 
-}
+//--------- create new transactions
+  app.post("/api/new", function(req, res) {
+    db.Transaction.create(req.body).then(function(dbTransaction) { 
+      res.json(dbTransaction);
+    });
+  });
+
+//---------- delete
+  app.delete("/api/transactions/:id", function(req, res){
+    db.Transaction.destroy({
+      where:{
+        id:req.params.id
+      }
+    }).then(function(dbTransaction){
+      res.json(dbTransaction);
+    });
+  });
+
+
+};
