@@ -19,7 +19,7 @@ var userId = GetQueryStringParams("userId");
     });
   }
 
- function renderTransacList(rows){ //this will render all the transactions of a user
+  function renderTransacList(rows){ //this will render all the transactions of a user
     //console.log(rows[0]);
     $( ".lTransac" ).remove();
     var counter =0;
@@ -32,6 +32,7 @@ var userId = GetQueryStringParams("userId");
       );
     }
     addDeleteEvent();
+    addEditEvent();
   }
 
   function GetQueryStringParams(sParam){ // this is to read the url & get the value of userId
@@ -129,7 +130,7 @@ $(document).ready(function(){
   });
 //--------------------------- CREATE TRANSACTION DATA
   $("#add").on("click", function(event){
-  event.preventDefault();
+    event.preventDefault();
     insertTransaction(
       {
         provider:$("#providerInput").val().trim(),
@@ -141,10 +142,10 @@ $(document).ready(function(){
     );
   });
 
-   $("#LogOut").on("click", function(event){
+  $("#LogOut").on("click", function(event){
     event.preventDefault();
     window.location = "/";
-  })
+  });
 
 });
 

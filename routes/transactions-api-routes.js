@@ -44,6 +44,4 @@ module.exports = function(app){
         res.json(dbTransaction);
       });
   });
-
-
 };
