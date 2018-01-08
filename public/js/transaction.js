@@ -1,6 +1,6 @@
 var userId = GetQueryStringParams("userId");
 
-function getTransactions(){
+  function getTransactions(){
     $.get("/api/transactions/"+userId, function(data){
       //console.log(data[0]);
       var rowsToAdd =[];
@@ -26,7 +26,7 @@ function getTransactions(){
     addDeleteEvent();
   }
 
-  function GetQueryStringParams(sParam){ // this is to read the url for userId
+  function GetQueryStringParams(sParam){ // this is to read the url & get the value of userId
   var sPageURL = window.location.search.substring(1);
   var sURLVariables = sPageURL.split('&');
   for (var i = 0; i < sURLVariables.length; i++)
@@ -56,6 +56,12 @@ function getTransactions(){
         method:"DELETE",
         url:"/api/transactions/" + rowId
       }) .done(getTransactions());
+    });
+  }
+
+  function addEditEvent(){
+    $(".table-striped").on("click", ".edit", function(){
+
     });
   }
 
