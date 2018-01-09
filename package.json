@@ -1,7 +1,7 @@
 {
-  "name": "project2",
-  "version": "1.0.0",
-  "description": "",
+  "name": "claimsy_app",
+  "version": "1.0.1",
+  "description": "Claimsy helps you track your claims and get paid back. Don't lose your $$$ to confusion. ",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/hlivingston07/project2.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Holly, Joyce, Ari, Jeff",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hlivingston07/project2/issues"
