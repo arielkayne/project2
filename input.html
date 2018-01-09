@@ -19,7 +19,7 @@
     <div class="container">
       <a href="index.html" id="logo">Claimsy</a>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Dashboard</a>
         <a href="add.html">Add a transaction</a>
         <!-- javascript needs to be written so that this is either showing or not depending on if logged in -->
         <a href="index.html" class = "signout">Sign Out</a>
@@ -30,22 +30,22 @@
 
   <div id="main-container" class="container">
     <section class="main-section">
-      <h1>Sign Up</h1>
-      <h3><a href="signin.html">Already have an account? Click here to sign in</a></h3>
+      <h1>Continue your Sign Up</h1>
 
       <form id="info-form">
         <ul>
           <li>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Insert Name Here" required="required">
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday" name="birthday" placeholder="Insert Name Here" required="required">
           </li>
           <li>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
+            <label for="zip">Zip Code</label>
+            <input type ="number" id="zip" name="zip" required="required" min="0" max="99999" placeholder="55555"></textarea>
           </li>
           <li>
-            <label for="deductible">Deductible Amount</label>
-            <input type ="number" id="deductible" name="deductible" required="required" min="0.00" max="100000.00" step="0.01"></textarea>
+            <!-- not required -->
+            <label for="notepad">Notepad - Add insurance info here</label>
+            <input type="textarea" id="notepad" name="notepad" placeholder="Insert Info Here">
           </li>
         </ul>
         <input type="submit">

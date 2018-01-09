@@ -19,7 +19,7 @@
     <div class="container">
       <a href="index.html" id="logo">Claimsy</a>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Dashboard</a>
         <a href="add.html">Add a transaction</a>
         <!-- javascript needs to be written so that this is either showing or not depending on if logged in -->
         <a href="index.html" class = "signout">Sign Out</a>
@@ -30,11 +30,38 @@
 
   <div id="main-container" class="container">
     <section class="main-section">
-      <h1>Welcome!</h1>
-      <button type="button" class="sign-in">Sign In</button>
+      <h1>Sign Up</h1>
+      <h3><a href="signin.html">Already have an account? Click here to sign in</a></h3>
 
-
-      
+      <form id="info-form">
+        <ul>
+          <li>
+            <label for="name">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Insert First Name Here" required="required">
+          </li>
+          <li>
+            <label for="name">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Insert Last Name Here" required="required">
+          </li>
+          <li>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
+          </li>
+          <li>
+            <label for="name">User Name</label>
+            <input type="text" id="username" name="username" placeholder="Insert User Name Here" required="required">
+          </li>
+          <li>
+            <label for="name">Password</label>
+            <input type="text" id="password" name="password" placeholder="Insert User Name Here" required="required">
+          </li>
+          <li>
+            <label for="name">Confirm Password</label>
+            <input type="text" id="passwordconfirm" name="passwordconfirm" placeholder="Insert User Name Here" required="required">
+          </li>
+        </ul>
+        <input type="submit">
+      </form>
 
     </section>
 

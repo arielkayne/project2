@@ -19,7 +19,7 @@
     <div class="container">
       <a href="index.html" id="logo">Claimsy</a>
       <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html">Dashboard</a>
         <a href="add.html">Add a transaction</a>
         <!-- javascript needs to be written so that this is either showing or not depending on if logged in -->
         <a href="index.html" class = "signout">Sign Out</a>
@@ -37,12 +37,14 @@
         <ul>
           <li>
             <label for="name">User Name</label>
-            <input type="text" id="name" name="name" placeholder="Insert Name Here" required="required">
+            <input type="text" id="username" name="username" placeholder="Insert Name Here" required="required">
           </li>
           <li>
             <label for="email">Password</label>
             <input type="email" id="email" name="email" placeholder="example@gmail.com" required="required">
           </li>
+          <!-- edit link to allow for modal to pop up to receive an email -->
+          <a href="index.html">Forgot Password?</a>
         </ul>
         <input type="submit">
       </form>
