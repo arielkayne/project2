@@ -49,7 +49,16 @@ var userId = GetQueryStringParams("userId");
   }
 
   function insertTransaction(transactionData){
-    $.post("/api/new", transactionData)
+    // $.post("/api/new",transactionData,getTransactions)
+    //console.log(transactionData);
+    // $.ajax({
+    //     method:"POST",
+    //     url:"/api/new",
+    //     data:transactionData
+    //   }).done(
+    //     getTransactions()
+    //   );
+     $.post("/api/new", transactionData)
       .then(getTransactions);
   }
 
@@ -127,6 +136,7 @@ var userId = GetQueryStringParams("userId");
 
 $(document).ready(function(){
 
+  getTransactions();
   getFirstNameLastName();
 //--------------------- READ TRANSACTION DATA
   $("#listTransac").on("click", function(event){ //to get all the transaction data from DB

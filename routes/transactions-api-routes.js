@@ -16,6 +16,7 @@ module.exports = function(app){
 
 //--------- create new transactions
   app.post("/api/new", function(req, res) {
+    console.log(req.body);
     db.Transaction.create(req.body).then(function(dbTransaction) { 
       res.json(dbTransaction);
     });
@@ -57,3 +58,4 @@ module.exports = function(app){
 
   });
 };
+
