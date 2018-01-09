@@ -118,7 +118,12 @@ var userId = GetQueryStringParams("userId");
     });
   }
 
-
+  function getDeductible(){
+    $.get("/api/dedux/"+userId, function(data){
+      console.log(data);
+      $("#dedux").html("My Deductible: " + data.deductible);
+    });
+  }
 
 $(document).ready(function(){
 
@@ -140,6 +145,11 @@ $(document).ready(function(){
         UserId:userId
       }
     );
+  });
+
+  $("#myDedux").on("click", function(event){
+    event.preventDefault();
+    getDeductible();
   });
 
   $("#LogOut").on("click", function(event){
