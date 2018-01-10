@@ -27,8 +27,8 @@ var userId = GetQueryStringParams("userId");
       counter += 1;
       $(".table-striped").append("<tr class='lTransac' id="+rows[i].id+"><td>" + rows[i].provider +
        "</td><td>"+rows[i].description+"</td><td>"+ rows[i].amount+
-       "</td><td><input disabled type=text value='"+ rows[i].status +"'/></td><td>"+ rows[i].createdAt+
-       "</td><td> <button class='btn btn-success edit'> Edit </button></td> <td> <button class='btn btn-success delete'>Delete</button> </td></tr>"
+       "</td><td><input disabled class=edit_Input type=text value='"+ rows[i].status +"'/></td><td>"+ rows[i].createdAt+
+       "</td><td> <button class='btn btn-default edit'> Edit </button></td> <td> <button class='btn btn-default delete'>Delete</button> </td></tr>"
       );
     }
     addDeleteEvent();
@@ -136,7 +136,7 @@ var userId = GetQueryStringParams("userId");
 
 $(document).ready(function(){
 
-  getTransactions();
+  //getTransactions();
   getFirstNameLastName();
 //--------------------- READ TRANSACTION DATA
   $("#listTransac").on("click", function(event){ //to get all the transaction data from DB
@@ -162,7 +162,7 @@ $(document).ready(function(){
     getDeductible();
   });
 
-  $("#LogOut").on("click", function(event){
+  $("#logOut").on("click", function(event){
     event.preventDefault();
     window.location = "/";
   });
