@@ -34,27 +34,27 @@ app.use(express.static("public"));
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
 	
-	// db.User.create({
-	// 	firstName: "Joyce",
-	// 	lastName: "Delt",
-	// 	deductible:1000,
-	// 	username:"jdelt@gmail.com",
-	// 	password:"jdelt"
-	// });
-	// db.User.create({
-	// 	firstName: "Patrick",
-	// 	lastName: "Delt",
-	// 	deductible:2000,
-	// 	username:"pdelt@gmail.com",
-	// 	password:"pdelt"
-	// });
-	// db.User.create({
-	// 	firstName: "Carla",
-	// 	lastName: "Delt",
-	// 	deductible:3000,
-	// 	username:"cdelt@gmail.com",
-	// 	password:"cdelt"
-	// });
+	db.User.create({
+		firstName: "Joyce",
+		lastName: "Delt",
+		deductible:1000,
+		username:"jdelt@gmail.com",
+		password:"jdelt"
+	});
+	db.User.create({
+		firstName: "Patrick",
+		lastName: "Delt",
+		deductible:2000,
+		username:"pdelt@gmail.com",
+		password:"pdelt"
+	});
+	db.User.create({
+		firstName: "Carla",
+		lastName: "Delt",
+		deductible:3000,
+		username:"cdelt@gmail.com",
+		password:"cdelt"
+	});
 
 	// db.Transaction.create({
 	// 	provider:"Aetna",
