@@ -34,7 +34,7 @@ app.use(express.static("public"));
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
 	
-	db.User.create({
+	db.Crazy.create({
 		firstName: "Joyce",
 		lastName: "Delt",
 		deductible:1000,
