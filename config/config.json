@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "toor",
+    "password": "root",
     "database": "claimsy_dev",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,11 +14,11 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "root",
+    "username": "tmvnn1ty0diiua74",
+    "password": "y5fc3mg4vqwcmdx9",
     "database": "database_production",
     "use_env_variable": "JAWSDB_URL",
-    "host": "127.0.0.1",
+    "host": "cdm1s48crk8itlnr.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
