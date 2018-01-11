@@ -3,7 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Transaction-Manager</title>
+	    <!-- Sets mobile device -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Claimsy - Transaction-Manager</title>
+	<!-- favicon -->
+  	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  	<link rel="stylesheet" type="text/css" href="css/reset.css">
+  	<link rel="stylesheet" type="text/css" href="css/reset-mobile.css">
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<!-- Latest compiled and minified CSS & JS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css" media="screen" title="no title">
@@ -13,52 +20,95 @@
 </head>
 
 <body>
-	<div class="container">
-		<div class="row top-30">
-      		<div class="col-md-2 col-sm-2">
-        		<span class="btn btn-default" id="LogOut">Log Out</span>
-      		</div>
-      		<div class="col-md-2 col-sm-2">
-        		<span class="btn btn-default" id="listTransac">List Transactions</span>
-      		</div>
-      		<div class="col-md-2 col-sm-2">
-        		<span class="btn btn-default" id="myDedux">My Deductibles</span>
-      		</div>
-    	</div>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="author-container">
-					<h1 id="transacUname">username</h1>
-					<table class="table table-striped">
-						<thead>
-							<tr id="form-row">
-								<form id="author-form">
-									<td colspan="10">
-										<input placeholder="Provider" id="providerInput" type="text" />
-										<input placeholder="Description" id="descriptionInput" type="text" />
-										<input placeholder="Amount" id="amountInput" type="text" />
-										<input placeholder="Status" id="statusInput" type="text" />
-										<button id="add" type="submit" class="btn btn-success">Add Transaction</button>
-									</td>
-								</form>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>Provider</th>
-								<th>Description</th>
-								<th>Amount</th>
-								<th>Status</th>
-								<th> Date</th>
-							</tr>
-						</tbody>
-					</table>
 
-					<div class="data-row"></div>
+		<!-- Begin header -->
+		<div class = "container" id="masthead">
+			<div class ="row" >
+				<div class="col-md-6" >
+			      	<h1>
+			      		<a href="signin.html" id="logo">Claimsy</a>
+			      	</h1>
+			      </div>
+			     <div class="col-md-2">
+	        		<span class="btn btn-default" id="listTransac">List Transactions</span>
+	      		</div>
+	      		<div class="col-md-2">
+	        		<span class="btn btn-default" id="myDedux">My Deductibles</span>
+	      		</div>
+				<div class="col-md-2">
+	        		<span class="btn btn-default" id="logOut">Log Out</span>
+	  			</div>
+			</div>
+		</div>
+		<!-- Main body -->
+		<div class ="container containerBackground">
+			<div class="row">
+				<div class="col-md-12">
+					<!-- Title -->
+					<div class="author-container">
+						<h1 id="transacUname">username</h1>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="container containerBackground">
+			<div class="row">
+				<table class="table table-striped">
+					<thead>
+						<tr id="form-row">
+							<form id="author-form">
+								<td colspan="10">
+									<input placeholder="Provider" id="providerInput" type="text" />
+									<input placeholder="Description" id="descriptionInput" type="text" />
+									<input placeholder="Amount" id="amountInput" type="text" />
+									<input placeholder="Status" id="statusInput" type="text" />
+									<button id="add" type="submit" class="btn btn-default">Add Transaction</button>
+								</td>
+							</form>
+						</tr>
+					</thead>
+					<tbody>
+						<tr></tr>
+						<tr>
+							<th><h3>Provider</h3></th>
+							<th><h3>Description</h3></th>
+							<th><h3>Amount</h3></th>
+							<th><h3>Status</h3></th>
+							<th><h3>Date</h3></th>
+						</tr>
+					</tbody>
+				</table>
+				<div class="data-row">
+				</div>
+			</div>
+			<div class="row">
+				<h1 id='dedux'></h1>
+			</div>
 		</div>
+		<div class="container containerBackground">
+			<div class="row">
+				<div class="col-md-12" id = "connect">
+        			<h2>Connect with Us</h2>
+    			</div>
+    		</div>
+			<div class="row">
+				<div class="col-md-3 headshot">
+        			<a href="https://github.com/hlivingston07" target="_blank"><img src= "images/holly.jpg" class="img-fluid" alt="Holly Livingston" /></a>
+        		</div>
+        		<div class="col-md-3 headshot">
+        			<a href="https://github.com/joycedelatorre" target="_blank"><img src="images/joyce.jpg" class="img-fluid" alt="GitHub" /></a><br>
+        		</div>
+        		<div class="col-md-3 headshot">
+        			<a href="https://github.com/luckykobold" target="_blank"><img src="images/jeff.jpg" class="img-fluid" alt="GitHub" /></a>
+        		</div>
+        		<div class="col-md-3 headshot">
+        			<a href="https://github.com/arielkayne" target="_blank"><img src="images/ari.jpg" class="img-fluid" alt="GitHub" /></a>
+        		</div>
+        	</div>
+        </div>
+  
+
+
 		<!-- Custom Script -->
 		<script src="js/transaction.js" type="text/javascript"></script>
 

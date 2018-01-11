@@ -61,8 +61,6 @@ $(document).ready(function() {
       }).done(function(msg){
         window.location="/"; // redirect user to the login page
         });
-      // confirm use that registering was successful else ask user to check credentials
-
     } else{
       alert("Please check your credentials");
     }

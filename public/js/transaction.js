@@ -27,8 +27,8 @@ var userId = GetQueryStringParams("userId");
       counter += 1;
       $(".table-striped").append("<tr class='lTransac' id="+rows[i].id+"><td>" + rows[i].provider +
        "</td><td>"+rows[i].description+"</td><td>"+ rows[i].amount+
-       "</td><td><input disabled type=text value='"+ rows[i].status +"'/></td><td>"+ rows[i].createdAt+
-       "</td><td> <button class='btn btn-success edit'> Edit </button></td> <td> <button class='btn btn-success delete'>Delete</button> </td></tr>"
+       "</td><td><input disabled class=edit_Input type=text value='"+ rows[i].status +"'/></td><td>"+ rows[i].createdAt+
+       "</td><td> <button class='btn btn-default edit'> Edit </button></td> <td> <button class='btn btn-default delete'>Delete</button> </td></tr>"
       );
     }
     addDeleteEvent();
@@ -49,7 +49,16 @@ var userId = GetQueryStringParams("userId");
   }
 
   function insertTransaction(transactionData){
-    $.post("/api/new", transactionData)
+    // $.post("/api/new",transactionData,getTransactions)
+    //console.log(transactionData);
+    // $.ajax({
+    //     method:"POST",
+    //     url:"/api/new",
+    //     data:transactionData
+    //   }).done(
+    //     getTransactions()
+    //   );
+     $.post("/api/new", transactionData)
       .then(getTransactions);
   }
 
@@ -118,10 +127,16 @@ var userId = GetQueryStringParams("userId");
     });
   }
 
-
+  function getDeductible(){
+    $.get("/api/dedux/"+userId, function(data){
+      console.log(data);
+      $("#dedux").html("My Deductible: " + data.deductible);
+    });
+  }
 
 $(document).ready(function(){
 
+  //getTransactions();
   getFirstNameLastName();
 //--------------------- READ TRANSACTION DATA
   $("#listTransac").on("click", function(event){ //to get all the transaction data from DB
@@ -142,7 +157,12 @@ $(document).ready(function(){
     );
   });
 
-  $("#LogOut").on("click", function(event){
+  $("#myDedux").on("click", function(event){
+    event.preventDefault();
+    getDeductible();
+  });
+
+  $("#logOut").on("click", function(event){
     event.preventDefault();
     window.location = "/";
   });

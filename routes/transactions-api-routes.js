@@ -16,6 +16,7 @@ module.exports = function(app){
 
 //--------- create new transactions
   app.post("/api/new", function(req, res) {
+    console.log(req.body);
     db.Transaction.create(req.body).then(function(dbTransaction) { 
       res.json(dbTransaction);
     });
@@ -44,4 +45,17 @@ module.exports = function(app){
         res.json(dbTransaction);
       });
   });
+
+//----------------- get deductibles
+  app.get("/api/dedux/:id", function(req,res){
+    db.User.findOne({
+      where:{
+        id:req.params.id
+      }
+    }).then(function(dbUser){
+      res.json(dbUser);
+    });
+
+  });
 };
+
