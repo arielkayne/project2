@@ -8,7 +8,7 @@
     "express": "^4.16.2",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
-    "sequelize": "^4.30.1"
+    "sequelize": "^4.31.0"
   },
   "devDependencies": {},
   "scripts": {
