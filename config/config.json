@@ -1,9 +1,19 @@
 {
+
+  "jeff": {
+    "username": "root",
+    "password": "",
+    "database": "claimsy_dev",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+
+
   "development": {
     "username": "root",
-    "password": "toor",
+    "password": "",
     "database": "claimsy_dev",
-    "host": "127.0.0.1",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
