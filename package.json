@@ -4,11 +4,20 @@
   "description": "Claimsy helps you track your claims and get paid back. Don't lose your $$$ to confusion. ",
   "main": "server.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-validation": "^1.0.2",
+    "express-validator": "^4.3.0",
+    "joi": "^13.1.0",
+    "morgan": "^1.9.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
-    "sequelize": "^4.31.0"
+    "passport": "^0.4.0",
+    "sequelize": "^4.31.2"
   },
   "devDependencies": {},
   "scripts": {
