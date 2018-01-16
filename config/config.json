@@ -1,17 +1,8 @@
 {
 
-  "jeff": {
-    "username": "root",
-    "password": "",
-    "database": "claimsy_dev",
-    "host": "localhost",
-    "dialect": "mysql"
-  },
-
-
   "development": {
     "username": "root",
-    "password": "",
+    "password": "toor",
     "database": "claimsy_dev",
     "host": "localhost",
     "dialect": "mysql"
