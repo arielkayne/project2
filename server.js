@@ -58,59 +58,65 @@ app.use(flash());
 // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
 	
-	db.User.create({
-		firstName: "Joyce",
-		lastName: "Delt",
-		deductible:1000,
-		username:"jdelt@gmail.com",
-		password:"jdelt"
-	});
-	db.User.create({
-		firstName: "Patrick",
-		lastName: "Delt",
-		deductible:2000,
-		username:"pdelt@gmail.com",
-		password:"pdelt"
-	});
-	db.User.create({
-		firstName: "Carla",
-		lastName: "Delt",
-		deductible:3000,
-		username:"cdelt@gmail.com",
-		password:"cdelt"
-	});
-
-	db.Transaction.create({
-		provider:"Aetna",
-		description: "follow-up checkup",
-		amount: 60,
-		status:"paid",
-		UserId:1
+	var addUsers = new Promise(function(){
+		db.User.create({
+			firstName: "Joyce",
+			lastName: "Delt",
+			deductible:1000,
+			username:"jdelt@gmail.com",
+			password:"jdelt"
+		});
+		db.User.create({
+			firstName: "Patrick",
+			lastName: "Delt",
+			deductible:2000,
+			username:"pdelt@gmail.com",
+			password:"pdelt"
+		});
+		db.User.create({
+			firstName: "Carla",
+			lastName: "Delt",
+			deductible:3000,
+			username:"cdelt@gmail.com",
+			password:"cdelt"
+		});
 	});
 
-	db.Transaction.create({
-		provider:"Aetna",
-		description: "follow-up checkup",
-		amount: 100,
-		status:"paid",
-		UserId:1
-	});
+	var addTransactions = function(){
+		db.Transaction.create({
+			provider:"Aetna",
+			description: "follow-up checkup",
+			amount: 60,
+			status:"paid",
+			UserId:1
+		});
 
-	db.Transaction.create({
-		provider:"Medicare",
-		description: "immunization",
-		amount: 300,
-		status:"not paid",
-		UserId:2
-	});
-	db.Transaction.create({
-		provider:"Kaiserpermanente",
-		description: "cataract surgery",
-		amount: 1000,
-		status:"not paid",
-		UserId:3
-	});
-	
+		db.Transaction.create({
+			provider:"Aetna",
+			description: "follow-up checkup",
+			amount: 100,
+			status:"paid",
+			UserId:1
+		});
+
+		db.Transaction.create({
+			provider:"Medicare",
+			description: "immunization",
+			amount: 300,
+			status:"not paid",
+			UserId:2
+		});
+		db.Transaction.create({
+			provider:"Kaiserpermanente",
+			description: "cataract surgery",
+			amount: 1000,
+			status:"not paid",
+			UserId:3
+		});
+	};
+
+	addUsers.then(addTransactions());
+
 	app.listen(PORT, function() {
 	  console.log("App listening on PORT " + PORT);
 	});
