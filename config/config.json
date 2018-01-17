@@ -1,10 +1,9 @@
 {
-
   "development": {
     "username": "root",
-    "password": "toor",
+    "password": "root",
     "database": "claimsy_dev",
-    "host": "localhost",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {

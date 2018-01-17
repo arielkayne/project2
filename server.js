@@ -4,22 +4,8 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-var passport = require('passport');
-var flash    = require('connect-flash');
-
-var morgan       = require('morgan');
-var cookieParser = require('cookie-parser');
-var session      = require('express-session');
-var Joi 		= require('joi');
-
-//var configDB = require('./config/database.js');
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&/
-
 var express = require("express");
 var bodyParser = require("body-parser");
-var validate = require('express-validation');
 
 // Sets up the Express App
 // =============================================================
@@ -37,16 +23,6 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
 app.use(express.static("public"));
-
-//&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-app.use(morgan('dev'));
-app.use(cookieParser());
-app.use(session({secret: "bananamangodragonfruit"}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(flash());
-
-
 
 // Routes
 // =============================================================
